@@ -55,7 +55,7 @@ public class User implements UserDetails{
     private String phoneNumber;
     // information
     @Getter(value=AccessLevel.NONE)
-    private Boolean enabled = false;
+    private Boolean enabled = true;
     private Boolean emailVerified = false;
     private Boolean phoneVerified = false;
 

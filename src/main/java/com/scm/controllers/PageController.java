@@ -29,6 +29,11 @@ public class PageController {
 
     // home page
 
+    @GetMapping("/")
+    public String index() {
+        return "redirect:/home";
+    }
+
     @RequestMapping("/home")
     public String home(Model model) {
         System.out.println("Home page handler");
@@ -64,7 +69,7 @@ public class PageController {
 
     // login
 
-    @GetMapping("/login") 
+    @RequestMapping("/login") 
     public String login() {
         System.out.println("Login Page Loading...");
         return "login";
@@ -112,6 +117,7 @@ public class PageController {
         user.setEmail(userForm.getEmail());
         user.setPassword(userForm.getPassword());
         user.setPhoneNumber(userForm.getPhoneNumber());
+        user.setAbout(userForm.getAbout());
         user.setProfilePic("https://img.freepik.com/free-vector/user-circles-set_78370-4704.jpg?t=st=1723784531~exp=1723788131~hmac=b3003d0719a6d745e920e8e4253cbe58e2a02de234db10616fbb7947569ee0aa&w=826");
         
         User savedUser = userService.saveUser(user);
