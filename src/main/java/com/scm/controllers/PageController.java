@@ -64,19 +64,19 @@ public class PageController {
     @GetMapping("/contact") 
     public String contact() {
         System.out.println("Contact Page Loading...");
-        return "contact";
+        return new String("contact");
     }
 
     // login
-
+    // this is registration controller - viewPage
     @RequestMapping("/login") 
     public String login() {
         System.out.println("Login Page Loading...");
-        return "login";
+        return new String("login");
     }
 
     // signup
-
+    // For processing registration
     @GetMapping("/register") 
     public String register(Model model) {
         
