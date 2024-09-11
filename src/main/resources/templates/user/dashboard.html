@@ -1,12 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html 
+lang="en" 
+th:replace="~{base :: parent(~{::#content}, ~{::title}, ~{::script})}">
+<!DOCTYPE html>
+<html 
+lang="en" 
+th:replace="~{base :: parent(~{::#content}, ~{::title}, ~{::script})}">
+
+<head> 
+    <title data-th-text="${loggedInUser.name}+' | Dashboard'">Dashboard</title>
 </head>
-<body>
-    <h1>this is dashboard page</h1>
-    <a data-th-href="@{/logout}">Logout</a>
+
+<body>   
+    
+    <div id="content">
+
+        <!-- sidebar -->
+        <!-- If user logged in : sidebar -->
+        <div th:if="${loggedInUser}">
+            <div 
+                data-th-replace="~{user/sidebar :: sidebar}">
+            </div>
+        </div>
+
+
+        <div class="sm:pl-64 pt-20" style="height: 1000px">
+            <div class="flex justify-center flex-col items-center">
+                <h1 class="text-5xl">Welcome to Dashboard Page</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt, voluptatibus!</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        console.log("This is a profile page")
+    </script>
+</body>
+</html>
+<head> 
+    <title data-th-text="${loggedInUser.name}+' | Dashboard'">Dashboard</title>
+</head>
+<!DOCTYPE html>
+<html 
+lang="en" 
+th:replace="~{base :: parent(~{::#content}, ~{::title}, ~{::script})}">
+
+<head> 
+    <title data-th-text="${loggedInUser.name}+' | SCM'">Profile Page</title>
+</head>
+
+<body>   
+    
+    <div id="content">
+
+        <!-- sidebar -->
+        <!-- If user logged in : sidebar -->
+        <div th:if="${loggedInUser}">
+            <div 
+                data-th-replace="~{user/sidebar :: sidebar}">
+            </div>
+        </div>
+
+
+        <div class="sm:pl-64 pt-20" style="height: 1000px">
+            <div class="flex justify-center flex-col items-center">
+                <h1 class="text-5xl">Welcome to Dashboard</h1>
+                <p>This is a Dashboard page you see</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        console.log("This is a profile page")
+    </script>
+</body>
+</html>
+<body>   
+    
+    <div id="content">
+
+        <!-- sidebar -->
+        <!-- If user logged in : sidebar -->
+        <div th:if="${loggedInUser}">
+            <div 
+                data-th-replace="~{user/sidebar :: sidebar}">
+            </div>
+        </div>
+
+
+        <div class="sm:pl-64 pt-20" style="height: 1000px">
+            <div class="flex justify-center flex-col items-center">
+                <h1 class="text-5xl">Welcome to Dashboard</h1>
+                <p>This is a Dashboard where your all contat will be display</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        console.log("This is a profile page")
+    </script>
 </body>
 </html>
