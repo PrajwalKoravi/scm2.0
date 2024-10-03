@@ -32,6 +32,7 @@ public class UserServiceImpl implements UserService {
         //user id : have to generate
         String userId = UUID.randomUUID().toString();
         user.setUserId(userId);
+        
         // password encode
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
